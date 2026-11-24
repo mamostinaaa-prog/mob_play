@@ -1,0 +1,31 @@
+﻿{% extends 'base.html' %}
+{% block title %}Студент{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Информация о студенте</h1>
+
+    {% if not student %}
+        <h2>Такого студента нет</h2>
+    {% else %}
+        <h2>
+            {{ student.second_name }}
+            {{ student.first_name }}
+            {{ student.middle_name }}
+        </h2>
+
+        <div>Возраст: {{ student.age }}</div>
+
+        <div>
+            <span>Группа:</span>
+            {% if student.in_group %}
+                <a href="{% url 'group_detail' %}?pk={{ student.in_group.pk }}">
+                    {{ student.in_group.title }}
+                </a>
+            {% else %}
+                Не назначена
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

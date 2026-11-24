@@ -1,0 +1,45 @@
+﻿{% extends 'base.html' %}
+{% block title %}Список студентов{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ edu_title }}</h1>
+    <h2>Список студентов</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>ФИО</th>
+                <th>Группа</th>
+                <th>Курс</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.pk }}</td>
+                <td>
+                    <a href="{% url 'stud_info' %}?s_id={{ student.pk }}">
+                        {{ student.second_name }}
+                        {{ student.first_name }}
+                        {{ student.middle_name }}
+                    </a>
+                </td>
+                {% if student.in_group %}
+                    <td>{{ student.in_group.title }}</td>
+                    <td>{{ student.in_group.course }}</td>
+                {% else %}
+                    <td>Не назначена</td>
+                    <td>—</td>
+                {% endif %}
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">Студентов пока нет</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+[
+{
+  "model": "students.students",
+  "pk": 2,
+  "fields": {
+    "first_name": "Анастасия",
+    "second_name": "Мамостина",
+    "middle_name": "Александровна",
+    "in_group": 1,
+    "age": 21
+  }
+},
+{
+  "model": "students.students",
+  "pk": 3,
+  "fields": {
+    "first_name": "Максиm",
+    "second_name": "Суворов",
+    "middle_name": "Николаевич",
+    "in_group": 2,
+    "age": 22
+  }
+},
+{
+  "model": "students.students",
+  "pk": 4,
+  "fields": {
+    "first_name": "Никита",
+    "second_name": "Березин",
+    "middle_name": "Никитич",
+    "in_group": 3,
+    "age": 21
+  }
+},
+{
+  "model": "students.group",
+  "pk": 1,
+  "fields": {
+    "title": "ИСТД-41",
+    "course": 1
+  }
+},
+{
+  "model": "students.group",
+  "pk": 2,
+  "fields": {
+    "title": "ИСТД-31",
+    "course": 1
+  }
+},
+{
+  "model": "students.group",
+  "pk": 3,
+  "fields": {
+    "title": "ИСТД-21",
+    "course": 1
+  }
+}
+]

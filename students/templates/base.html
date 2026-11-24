@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="menubar">
+            <a href="/"><div class="logo">Главная</div></a>
+            <a href="{% url 'students_list' %}"><div class="menu_button">Студенты</div></a>
+            <a href="{% url 'group_list' %}"><div class="menu_button">Группы</div></a>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="footer_content">ИВГПУ 2026</div>
+    </footer>
+</body>
+
+</html>

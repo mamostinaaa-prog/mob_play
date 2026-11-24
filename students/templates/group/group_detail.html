@@ -1,0 +1,41 @@
+﻿{% extends 'base.html' %}
+{% block title %}Группа{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ group.title }}</h1>
+
+    <div>
+        Курс: {{ group.course }}
+    </div>
+
+    <h2>Список студентов</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Возраст</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in group.students.all %}
+            <tr>
+                <td>
+                    <a href="{% url 'stud_info' %}?s_id={{ student.pk }}">
+                        {{ student.second_name }}
+                        {{ student.first_name }}
+                        {{ student.middle_name }}
+                    </a>
+                </td>
+                <td>{{ student.age }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">В группе пока нет студентов</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

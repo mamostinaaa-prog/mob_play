@@ -1,0 +1,16 @@
+﻿{% extends 'base.html' %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Доступные страницы</h1>
+    <ul>
+        <li>
+            <a href="{% url 'group_list' %}">Список групп</a>
+        </li>
+        <li>
+            <a href="{% url 'students_list' %}">Список студентов</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
